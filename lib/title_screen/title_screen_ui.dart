@@ -21,11 +21,13 @@ class TitleScreenUi extends StatelessWidget {
     required this.difficulty,
     required this.onDifficultyPressed,
     required this.onDifficultyFocused,
+    required this.onStartPressed,
   });
 
   final int difficulty;
   final void Function(int difficulty) onDifficultyPressed;
   final void Function(int? difficulty) onDifficultyFocused;
+  final VoidCallback onStartPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,7 @@ class TitleScreenUi extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 20, right: 40),
-                child: _StartBtn(onPressed: () {}),
+                child: _StartBtn(onPressed: onStartPressed),
               ),
             ),
           ),
